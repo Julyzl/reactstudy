@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router ,Route} from 'react-router-dom'
 import Formweb from './form'
 import Statusweb from'./status'
+import JSXweb from'./JSX'
+import Fatherweb from'./props/father'
+import Refsweb from './refs/refs'
+import 'antd/dist/antd.css'
+
+
+
 function UserGreeting(props) {
     return <h1>Welcome back!</h1>;
   }
@@ -109,14 +116,17 @@ const listItems = numbers.map((key) =>
       return (
         <Router>
             <Route path="/form" component={Formweb}/>
+            <Route exact path="/jsx" component={JSXweb}/>
+            <Route exact path="/father" component={Fatherweb}/>
+<Route exact path="/refs" component={Refsweb}></Route>
             <Route path='/status' component={Statusweb}></Route>
-               <div>
+               {/* <div>
             <Blog  posts={posts} />
             {listItems}
            <ListItemsarr  numberss={[2,3,4,6,7]}/>
           <Greeting isLoggedIn={isLoggedIn} />
           {button}
-        </div>
+        </div> */}
         </Router>
      
       );
